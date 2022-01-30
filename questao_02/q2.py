@@ -36,7 +36,7 @@ df_manaus['ILS_PPC'] = df_manaus['ILS_PPC'].astype(float, errors = 'raise')
 df_manaus['PIB'] = df_manaus['VABAGRO_PC'] + df_manaus['VABI_PC'] + df_manaus['VABS_PC'] + df_manaus['VABA_PC'] + df_manaus['ILS_PPC']
 
 # 2. Qual o valor médio do Produto Interno Bruto da cidade de Manaus no período que abrange o dataset? 
-df_saida = df_manaus.head()
+df_saida = df_manaus.head(9)
 
 # Salvar resultado em txt
 df_saida.to_csv("saida_q2.txt")
