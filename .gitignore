@@ -1,0 +1,9 @@
+*.log
+.venv
+.*__cache__
+.vccode
+local_settings.py
+Include
+Lib
+Scripts
+pyvenv.cfg
