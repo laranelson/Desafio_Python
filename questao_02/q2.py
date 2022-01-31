@@ -35,11 +35,19 @@ df_manaus['ILS_PPC'] = df_manaus['ILS_PPC'].astype(float, errors = 'raise')
 # Criar uma nova coluna PIB e somar os valores da Agropecuária, Indústria, Serviços, Administração e Impostos
 df_manaus['PIB'] = df_manaus['VABAGRO_PC'] + df_manaus['VABI_PC'] + df_manaus['VABS_PC'] + df_manaus['VABA_PC'] + df_manaus['ILS_PPC']
 
-# 2. Qual o valor médio do Produto Interno Bruto da cidade de Manaus no período que abrange o dataset? 
-df_saida = df_manaus.head(9)
+# Calcular a média do PIB
+df_manaus_mean_pib = df_manaus.mean()['PIB']
 
-# Salvar resultado em txt
-df_saida.to_csv("saida_q2.txt")
+# converter o dataframe em string para salvar o resultado em txt
+df_manaus_mean_pib = df_manaus_mean_pib.astype(str)
+
+# 2. Qual o valor médio do Produto Interno Bruto da cidade de Manaus no período que abrange o dataset? 
+arquivo = open('saida_q2.txt','w')
+arquivo.write("O valor médio do PIB da cidade de Manaus no período de 2010 a 2018 foi: ")
+arquivo.write(df_manaus_mean_pib)
+arquivo.close()
+
+
 
 
 
